@@ -1,4 +1,4 @@
-# The Gelfand problem in tubular domains
+# The Gelfand Problem in Tubular Domains
 
 Home of https://arxiv.org/abs/1903.01833.
 
