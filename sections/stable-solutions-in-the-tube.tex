@@ -1,0 +1,348 @@
+\section{The stable solution in the tube}
+\label{sec:stable-sol-in-tube}
+
+In this section, we establish the following:
+
+\begin{theorem}
+\label{thm:unique-stable-sol}
+For small $\ep$, there exists a unique stable solution to
+\begin{equation}
+\label{eq:small-gelfand}
+\left\{
+\begin{array}{cc}
+\Delta u + \frac{\lambda}{\ep^2}e^u=0 & \mbox{ in }T_\ep(\Lambda),\\
+u = 0 & \mbox{ on }\partial T_\ep(\Lambda).
+\end{array}
+\right.
+\end{equation}
+\end{theorem}
+
+\noindent An outline of the proof follows:
+
+\begin{itemize}
+\item Let $U$ be the unique radial stable solution of $(G_\lambda)$ for the
+$(n-1)$-dimensional ball. We choose $u_\ep$, a rescaled version of $U$ that
+travels along $\Lambda$, this is, for each section of the normal
+bundle of $\Lambda$, consider the $(n-1)$-dimensional ball of radius $\ep$
+centered about $\Lambda$ and use a copy of $U$.
+\item The function $u_\ep$ verifies approximately the equation and it is stable
+in the sense of section \ref{sec:stable-branch}. To prove this, we find a
+super-solution to the problem and use a version of the maximum principle.
+\item We use a fixed-point argument to prove the existence of a genuine solution
+to \ref{eq:small-gelfand} of the form $u_\ep+v$, where $v$ is small. The
+fixed-point theorem ensures the uniqueness of the perturbation if $v$ is small
+enough. Finally, we show that larger perturbations do not lead to stable
+solutions, proving the result.
+\end{itemize}
+
+Let us first collect some lemmas that will help us prove
+\ref{thm:unique-stable-sol}.
+\subsection{Some elliptic estimates}
+Throughout this section, $||\cdot||$
+stands for the $L^\infty$ norm in the tube
+$T_\ep$, unless stated otherwise. Let $U(r)$ be the unique (radial) stable
+solution of $(G_\lambda)$ for $\Omega
+= B^{n-1}$, \ie
+\begin{equation}
+\left\{\begin{array}{cc}
+\Delta U + \lambda\, e^U=0 & \mbox{ in }B^{n-1},\\
+U = 0 & \mbox{ on }\partial B^{n-1},
+\end{array}\right.
+\end{equation}
+
+\noindent and define $u_\ep:T_\ep\to \RR$ by
+$$
+u_\ep(y,z):=U\bigg(\frac{\mbox{dist}(z,\Lambda)}{\ep}\bigg).
+$$
+As the non-linearity $\lambda\,e^u$ is not multiplicative, we have that the
+function $u_\ep$ will not verify the Gelfand equation in the tube, nor an
+approximation, but the following estimate.
+
+\begin{lemma}\label{lem-bound_Cepsilon} There is a constant $C$ such that
+\begin{equation}
+|\ep^2\Delta u_\ep+\lambda\, e^{u_\ep}|\leq C\ep.
+\end{equation}
+\end{lemma}
+
+\begin{proof} It follows from the definition of $u_\ep$ that
+$\ep^2\Delta_{g_z}u_\ep + \lambda\, e^{u_\ep}=0$, and note that $u_\ep$ does not
+depend on the parameter $t$. Using the expression of the Euclidean Laplacian in
+Fermi coordinates, we have
+$$\ep^2\, \Delta u_\ep+\lambda e^{u_\ep} = (\ep^2\, \Delta_{g_z} u_\ep +
+\lambda e^{u_\ep})+\ep^2(\partial_{tt}+D)u_\ep = \ep^2 D\, u_\ep,
+$$
+therefore, the estimate
+\begin{eqnarray}
+|\ep^2\Delta u_\ep + \lambda e^{u_\ep}|&\leq& \ep^2\, ||Du_\ep|| \\
+&\leq& \sum_{i=1}^{n-1} \big(\ep^2||z_iD^{(2)}u_\ep||+\ep^2||D^{(1)}u_\ep||\big)\\
+    &=& \sum_{i=1}^{n-1}\big(\ep
+    ||x_iD^{(2)}U||_{L^\infty(B)}+\ep||D^{(1)}U||_{L^\infty(B)}\big)
+\end{eqnarray}
+holds and the result follows.
+\end{proof}
+\medskip
+
+The stability of $U$ implies that there exist $\mu_1>0$ and $\phi_1>0$ such that
+\begin{equation}
+\left\{\begin{array}{cc}
+-(\Delta+\lambda e^U)\phi_1=\mu_1\phi_1 & \mbox{ in }B^{n-1},\\
+\phi=0 & \mbox{ on }\partial B^{n-1},
+\end{array}\right.
+\end{equation}
+and hence the linearized operator about $U$ is invertible. This proves the
+existence of a function $W$, which is a super-solution to the linearized
+equation in $B^{n-1}$, verifying
+\begin{equation}
+\left\{\begin{array}{cc}
+-(\Delta+\lambda e^U)W=1 & \mbox{ in }B^{n-1},\\
+W=0 & \mbox{ on }\partial B^{n-1}.
+\end{array}\right.
+\end{equation}
+
+\begin{lemma} There is a constant $B$ such that $|W|\leq B, |\nabla W|\leq
+B, |\Delta W|\leq B$.
+\end{lemma}
+\begin{proof}
+By the GNN theorem, $W$ is radially symmetric, positive and $\partial_r W<0$,
+which gives $|W|\leq W(0)$. Write $W(z)=a(r)$, then $a$ solves
+\begin{equation}
+\left\{
+\begin{array}{lc}
+a''(r)+\frac{n-1}{r^2}a'(r)+\lambda e^Ua+1=0, & 0<r<1,\\
+a(1) = 0, a'(0) = 0. &
+\end{array}
+\right.
+\end{equation}
+As $a(r)$ is bounded and positive, we have 
+\begin{equation}
+    \label{eq:bounding-a'}
+-C\leq a''(r)+\frac{n-1}{r^2}a'(r)\leq -1
+\end{equation}
+for a positive constant $C$.
+Multiplying \ref{eq:bounding-a'} by $e^{-\frac{n-1}{r}}$ we have $
+-Ce^{-\frac{n-1}{r}}\leq \big(e^{-\frac{n-1}{r}}a'(r)\big)'\leq
+e^{-\frac{n-1}{r}}$, \ie  
+\begin{eqnarray*}
+    |a'(r)|\leq  C_1\cdot e^{\frac{n-1}{r}}\int_0^re^{-\frac{n-1}{t}}\, dt \leq
+    C_1  
+\end{eqnarray*}
+for a constant $C_1=\max(C,1)$. This yields $|\nabla W(z)|=|a(r)|\leq C_1$.
+Finally, write $|\Delta W|\leq 1+e^UW\leq C_2$ for a positive constant $C_2$
+and define $B:=\max(C_1,C_2,W(0))$.
+
+\end{proof}
+
+Similarly, define $w_\ep:T_\ep\to \RR$ by
+$w_\ep(y,z):=W\big(\frac{\operatorname{dist}(z,\Lambda)}{\ep}\big)$. The
+corresponding estimate for $w_\ep$ will be given by the following. 
+
+\begin{lemma}
+For sufficiently small $\ep$, the function $w_\ep$ verifies
+\begin{equation}
+    \label{eq-lemma--1/2}
+\ep^2 \Delta w_\ep + \lambda e^{u_\ep}w_\ep \leq -1/2.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Again note that $w_\ep$ does not depend on the parameter $t$ and that
+$-(\ep^2\Delta_{g_z}w_\ep + e^{u_\ep}w_\ep)=1$. We then have that $(\ep^2\Delta
++ \lambda e^{u_\ep})w_\ep = (\ep^2\Delta_{g_z}+\lambda
+e^{u_\ep})w_\ep+\ep^2(\partial_{tt} + D)w_\ep = -1+\ep^2Dw_\ep$. As $|\ep^2
+Dw_\ep|\leq \ep C'$ for a constant $C'$ (as in the proof of lemma 1)
+, the result follows for small $\ep$.
+\end{proof}
+
+Consider now the invertibility problem for the linearized operator
+$L_\ep:=-(\ep^2 \Delta + e^{u_\ep})$ in $T_\ep(\Lambda)$: Given a smooth $f$ in
+the tube, find $\phi$ such that
+\begin{equation}
+    \label{eq-lin-ep}
+    \left\{
+    \begin{array}{cc}
+        L_\ep\phi = f & \mbox{ in }T_\ep(\Lambda),\\
+        \phi = 0& \mbox{ on } \partial T_\ep(\Lambda).
+    \end{array}
+    \right.
+\end{equation}
+
+\begin{lemma} Let $\phi$ solve \ref{eq-lin-ep}, then
+    \label{lem-phi}
+    $\phi\leq 2 ||f||_{L^\infty(T_\ep)}\cdot w_\ep. $
+    Moreover, $L_\ep$ is invertible given that $\ep$ is small enough.
+\end{lemma}
+
+\begin{proof} Let us first give the a-priori estimate by means of the maximum
+    principle. From equations \ref{eq-lemma--1/2} and \ref{eq-lin-ep} we have
+    \begin{equation}
+        L_\ep w_\ep \geq \frac{1}{2}\;\mbox{ and }\;
+        L_\ep\bigg(\frac{\phi}{2||f||}\bigg)\leq \frac{1}{2}.
+    \end{equation}
+    By addition, we have $L_\ep\big(w_\ep-\frac{1}{2||f||}\phi\big)\geq 0$.
+    Recall the strong maximum principle: If $u$ is a smooth function verifying
+    $-\Delta u\geq 0$ in a connected domain $\Omega$ of $\RR^n$, then if $u$
+    attains a minimum in $\Omega$, $u$ is constant. The same conclusion holds
+    if $-\Delta$ is replaced by $-\Delta+a(x)$ with $a\in L^p(\Omega)$ and
+    $p\leq n/2$ (see \cite{1980JPhA...13..417H} for a proof of this theorem with
+    applications to a Helium-like system). Note that the conclusion holds
+    regardless of the sign of $a(x)$. Apply the strong maximum principle to the
+    operator $L_\ep$ to conclude that either $w_\ep-\frac{1}{2||f||}\phi$ is
+    constant or it attains a minimum in $\partial T_\ep(\Lambda)$. Because both
+    $w_\ep$ and $\phi$ vanish on the boundary, in both cases
+    $w_\ep-\frac{1}{2||f||}\phi\geq 0$, proving the first assertion.
+    To prove that $L_\ep$ is invertible, write the
+    problem in Fermi coordinates $(y,z)\in\Lambda\times B^{n-1}$:
+    \begin{equation}
+        \left\{
+            \begin{array}{cc}
+                -(\ep^2 \Delta_{\bar g}+\lambda e^{u_\ep})\phi - \ep^2\, D=f & \mbox{ in }T_\ep(\Lambda),\\
+                \phi=0 & \mbox{ on }\partial T_\ep(\Lambda).
+            \end{array}
+            \right.
+    \end{equation}
+
+    Recall that $D$ is of the form $\sum_{i=1}^{n-1} z_iD^{(2)}+D^{(1)}$ where
+    $D^{(i)}$ is an $i$--differential operator with smoothly bounded
+    coefficients. In order to work in a domain with no dependence in $\ep$, use the
+    scaling $z\mapsto z/\ep$ and define $\Phi(y,z):=\phi(y,\ep z),
+    F(y,z):=f(y,\ep z)$.
+    After simple manipulation, the problem reads
+    \begin{equation}
+        \left\{
+            \begin{array}{cc}
+                (L-\ep D)\Phi = F& \mbox{ in }T_1(\Lambda),\\
+                \Phi=0 & \mbox{ on }\partial T_1(\Lambda).
+            \end{array}
+            \right.
+    \end{equation}
+    where $L=-(\Delta_{\bar g} + \lambda e^U)$ is invertible by hypothesis.
+    Indeed, its eigenvalues are numbers of the form $\mu_i+\ep^2 \nu_j$ where
+    $0<\mu_1\leq \mu_2\leq \mu_3\leq \dots$ are the eigenvalues of
+    $-(\Delta_{g_z}+\lambda e^U)$ in $B^{n-1}$ and $0=\nu_1<\nu_2\leq \nu_3\leq
+    \dots$ are the eigenvalues of $-\Delta_{\mathring g}$ on $\Lambda$.
+    Therefore, $L-\ep D$ is a small perturbation of $L$, and we conclude that
+    it is invertible for small $\ep$ after a simple fixed-point argument:
+    Write $\Phi+L^{-1}F+\Psi$, then $\Psi$ solves 
+    \begin{equation}
+        \left\{
+            \begin{array}{cc}
+                \Psi = \ep L^{-1}D(L^{-1}F+\Psi)& \mbox{ in }T_1(\Lambda),\\
+                \Psi=0 & \mbox{ on }\partial T_1(\Lambda).
+            \end{array}
+            \right.
+    \end{equation}
+    Using the fact that the norm of the inverse of $L$ is controlled by
+    $1/\mu_1$, it is straightforward to show that the right-hand operator (to
+    which we associate the $||\cdot||_\infty$ norm in the tube) is a
+    contraction mapping for small $\ep$ that maps the space of bounded
+    functions in the tube into itself. Thus $\Psi$ exists, allowing to conclude.
+\end{proof}
+
+
+\subsection{Proof of theorem \ref{thm:unique-stable-sol}}
+
+\textit{Proof:} Write a perturbation of the solution $u=u_\ep+v$. Problem
+    \ref{eq:small-gelfand} reduces to finding $v$ such that
+    \begin{equation}
+        \label{eq-fixed-point-H}
+        \left\{
+            \begin{array}{cc}
+                \Delta (u_\ep+v)+\frac{\lambda}{\ep^2}e^{u_\ep+v}=0& \mbox{ in }T_\ep(\Lambda),\\
+                v=0 & \mbox{ on }\partial T_\ep(\Lambda).
+            \end{array}
+            \right.
+    \end{equation}
+    Rewrite the differential equation as $(\ep^2\Delta + \lambda
+    e^{u_\ep})v+(\ep^2\Delta u_\ep + \lambda e^{u_\ep})+\lambda
+    e^{u_\ep}(e^v-1-v)=0$, and, recalling that $L_\ep$ is invertible for
+    small $\ep$, define the following operator
+    \begin{equation}
+        H_\ep:= v\mapsto L_\ep^{-1}((\ep^2\Delta u_\ep + \lambda
+        e^{u_\ep})+\lambda e^{u_\ep}(e^v-1-v)).
+    \end{equation}
+    Thus, any solution of \ref{eq-fixed-point-H}  is a fixed point of $H_\ep$. Let us introduce the space of functions
+    $$\AAA_\ep :=\{v\in L^\infty(T_\ep(\Lambda)),\exists\, C \in \RR, ||v||\leq
+    C\ep\},$$
+    to which we associate the $L^\infty$ norm in the tube.
+    % {\color{red}The space is not well defined because of the $\exists C$.}
+    The following lemmas show that $H_\ep$ is a contraction mapping in
+    $\AAA_\ep$. First, the fact that $H_\ep(\AAA_\ep)\subset \AAA_\ep$ for
+    sufficiently small $\ep$ is a direct consequence of Lemma \ref{lem-phi} for
+    a function in $\AAA_\ep$. 
+    \begin{lemma}
+        Let $v$ verify \ref{eq-fixed-point-H} and define $B=\max(1,2||\lambda
+        e^U W||_{L^\infty(B^{n-1})})$. If $|v|\leq 1/B$, then $|v|\leq C\ep
+        w_\ep$, where $C$ is a constant close to the constant from Lemma
+        \ref{lem-bound_Cepsilon}.
+    \end{lemma}
+    \begin{proof} Lemma \ref{lem-phi}, applied for $v$ and $f=(\ep^2\Delta
+        u_\ep+\lambda e^{u_\ep})+ \lambda e^{u_\ep}(e^v-1-v)$ gives
+    \begin{eqnarray}
+        v &\leq & 2 ||(\ep^2\Delta u_\ep + \lambda e^{u_\ep})+\lambda
+        e^{u_\ep}(e^v-1-v)||w_\ep\\
+          &\leq & C\ep w_\ep + B(e^v-1-v),
+    \end{eqnarray}
+    for a constant $C$ from Lemma \ref{lem-bound_Cepsilon} not depending on
+    $\ep$. Using the fact that $e^t-1-t<t^2$ for $t\in[-1,1]$ (the first
+    non-zero root of $g(t):=t^2-(e^t-1-t)$ is greater than $\ln(3)$), we
+    conclude that, as $|v|\leq 1$, $|v|\leq C\ep w_\ep+Bv^2$. Thus,
+    \begin{equation}
+        \big(|v|-C\ep w_\ep+O(\ep^2)\big)\cdot\big( |v| -\frac{1}{B}-C\ep
+        w_\ep+O(\ep^2)\big)\geq 0,
+    \end{equation}
+    from where the result follows. 
+\end{proof}
+
+\begin{lemma}
+    $H_\ep$ is a contraction mapping of $\AAA_\ep$.
+\end{lemma}
+\begin{proof}
+    Take $f,g\in \AAA_\ep$, then,
+    $$||H_\ep(f-g)||=||L_\ep^{-1}\big(\lambda e^{u_\ep}(e^f-e^g -
+    (f-g))\big)||.  $$
+    The convexity of the exponential function implies that for any reals
+    $\alpha,\beta$ with $\alpha>\beta$ we have $e^{\alpha}-e^{\beta}\leq
+    e^{\alpha}(\alpha-\beta)$, and, taking $\beta=0$, $e^\alpha-1\leq \alpha e^\alpha$, therefore,
+    \begin{eqnarray*}
+        ||H_\ep(f-g)||&\leq& C\lambda ||e^{u_\ep}||\cdot ||e^{\max(f,g)}-1||\cdot
+    ||f-g||\\
+                      &\leq& C'\ep||f-g||,
+    \end{eqnarray*}
+    for a constant $C'$ not depending on $\ep$.
+\end{proof}
+This proves that there exists a
+    unique genuine solution of $\ref{eq:small-gelfand}$ of the form $u_\ep+v$
+    with $v$ small. The stability of this solution comes from the fact that the
+    spectrum of the operators $-(\Delta+\lambda e^U)$ in $T_1(\Omega)$ and
+    $-(\Delta + \lambda e^{u_\ep}$ in $T_\ep(\Omega)$ are equal: We have
+    $$-(\Delta + \lambda e^{u_\ep+v})=-(\Delta + \lambda e^{u_\ep})+O(\ep)
+    \mbox{ in } T_\ep(\Omega),$$
+    and therefore the eigenvalues of the left-hand operator are close to the
+    sequence $\mu_i$, which does not depend on $\ep$. In particular, they form
+    a sequence of positive values for small $\ep$, which implies precisely that
+    the associated quadratic form is positive definite. This allows to conclude
+    that, for sufficiently small $\ep$, there exists a unique small perturbation
+    that leads to a genuine stable solution of \ref{eq:small-gelfand}. This
+    uniqueness holds only in a neighbourhood of $u_\ep$; it remains the
+    question of whether there are stable solutions far from $u_\ep$. We answer
+    negatively with the following argument: Suppose that there are two distinct
+    stable solutions of \ref{eq:small-gelfand}. Their difference $v:=u_2-u_1$
+    verifies
+    $$-\ep^2 \Delta v = \lambda(e^{u_2}-e^{u_1}).$$
+    Multiplying the above equation by the positive part of $v$ and integrating
+    in the tube gives
+    \begin{equation}
+        \label{eq:unique-stable}
+        \ep^2\int_{T_\ep}|\nabla v_+|^2\,dx = \lambda
+    \int_{T_\ep}(e^{u_2}-e^{u_1})\cdot v_+\, dx.
+\end{equation}
+    As $u_2$ is stable, we have $\ep^2\int_{T_\ep}|\nabla v_+|^2\geq \lambda
+    \int_{T_\ep} e^{u_2}\cdot v_+^2\, dx$. Plugging this inequality into
+    \ref{eq:unique-stable} yields
+    $$
+    0 \leq \lambda \int_{T_\ep}(e^{u_2}-e^{u_1}-e^{u_2}v_+)v_+\, dx.
+    $$
+    Note that the integrand is a negative number by strict convexity of the
+    exponential function, therefore, $v_+=0$. Changing $u_1$ and $u_2$ gives
+    $v_-=0$, completing the proof of Theorem \ref{thm:unique-stable-sol}.
+    \hfill $\blacksquare$

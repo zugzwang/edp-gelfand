@@ -1,0 +1,87 @@
+% !TeX root = ../main.tex
+
+\subsection{Morse index of $\tilde L_\ep$}
+
+The spectral analysis of $\tilde L_\ep$ follows directly from the ideas of
+\cite{Pacard2014}, where authors deal with a power non-linearity. We adapt the
+same estimates here. Recall that the normal bundle $N\Lambda$ is endowed with
+$\bar g= \mathring g + g_z$ in $\RR^n$, where $\mathring g$ is the induced
+metric on $\Lambda$ and $g_z:=dz^2$ is the Euclidean metric on normal fibers of
+$N\Lambda$. We deal with the operators
+$$\hat L_\ep:=-(\ep^2\Delta_{\bar g}+\lambda e^{\tilde u_\ep}) \quad \mbox{ and
+} \quad \tilde L_\ep := -(\ep^2\Delta + \lambda e^{u_\ep}),$$
+to which we associate the quadratic forms
+\begin{eqnarray*}
+    \hat Q(v) &=& \ep^2 \int_{T_\ep}|\nabla_{\bar g} v|^2\, \operatorname{dvol}_{\bar g}
+    - \lambda \int_{T_\ep}e^{u_\ep}v^2 \, \operatorname{dvol}_{\bar g}\\
+    \tilde Q(v) &=& \ep^2 \int_{T_\ep}|\nabla_{g} v|^2\, \operatorname{dvol}_{g}
+    - \lambda \int_{T_\ep}e^{u_\ep}v^2 \, \operatorname{dvol}_{g}\\
+\end{eqnarray*}
+respectively, where $g$ stands for the Euclidean metric.
+
+We know explicit eigenvalues of $\hat L_\ep$, which, together with Weyl's
+approximation formula, will give us an estimate of the Morse index of
+$\tilde L_\ep$.
+
+\begin{lemma}
+There exists a constant $C>0$ such that, for all sufficiently small $\ep>0$,
+$$
+\operatorname{Index}(\tilde L_\ep)\leq \frac{C}{\ep}.
+$$
+\end{lemma}
+
+\begin{proof} Let $w\in H_0^1(T_\ep)$ with $||w||_{L^2(T_\ep)}=1$ and
+    satisfying $\tilde Q(w)\leq 0$. We will give an estimate for $\hat Q(w)$.
+    First,
+    \begin{eqnarray}
+        \label{eq-nabla-w}
+        ||\nabla_g w|^2-|\nabla_{\bar g} w|^2|&\leq& C\ep |\nabla_g w|^2,\\
+        |\sqrt{\det g} - \sqrt{\det \bar g}|&\leq& C\ep\sqrt{\det \bar g}
+    \end{eqnarray}
+    follow at once from the fact that, if one considers a parameterisation $\Phi$
+    from a neighbourhood of $(y,0)\in \Lambda\times \RR^{n-1}$ into a
+    neighbourhood of $y\in\RR^n$ by
+    $$
+    \Phi(y,z_1,\dots,z_{n-1}):=y + \sum_{i=1}^{n-1}z_i e^i(y),
+    $$
+    where $\{e^1,\dots, e^{n-1}\}\subset N\Lambda$ is a moving orthonormal
+    frame in which each $e^j$ is a smooth section of the normal bundle of
+    $N\Lambda$, one can show that the pull-back of $g$ by $\Phi$ is close
+    to $\bar g$. For completeness, let us give a quantitative version of this
+    statement, which is proved in \cite{Pacard2014} (Lemma 3.1). {\color{red}
+    Expresar referencia como lema.} Using \ref{eq-nabla-w}, we have
+    \begin{eqnarray*}
+        \hat Q(w) &\leq & \hat Q(w)-\tilde Q(w)\\
+                  &\leq & C\ep\bigg(\int_{T_\ep} \ep^2 \cdot |\, |\nabla_g
+                      w|^2-|\nabla_{\bar g} w|^2|\, d\mbox{vol}_{\bar g}
+                      + \int_{T_\ep} \lambda e^{u_\ep}w^2\,
+                  d\operatorname{vol}_{\bar g}\bigg)\\
+                  &\leq & C\ep\int_{T_\ep}(\ep^2|\nabla_g w|^2+\lambda
+                  e^{u_\ep}w^2 \, d\mbox{vol}_g.
+    \end{eqnarray*}
+    Also, $\tilde Q(w)\leq 0$ implies
+    \begin{equation}
+        \int_{T_{\ep}} \ep^2|\nabla_g w|^2\, d\mbox{vol}_g \leq \lambda
+        \int_{T_\ep}e^{u_\ep}w^2\, d\mbox{vol}_g \leq C'\int_{T_\ep}w^2\,
+        d\mbox{vol}_{\bar g}=C',
+    \end{equation}
+    from where we conclude $\hat Q(w)\leq C\ep$ for a posivite constant $C$.
+    This means that the index of $\tilde L_\ep$ is less than the number of
+    independent eigenfunctions of $\hat L_\ep$ ssociated to eigenvalues that
+    do not exceed $C\ep$. In other words,
+    \begin{eqnarray*}
+        \mbox{Index}(\hat L_\ep) &\leq & \#\{j\in\NN:\, \mu_i+\ep^2\nu_j\leq
+        C\ep\}\\
+                                 & = & \#\left\{j\in\NN:\,\nu_j\leq
+                                 \frac{C}{\ep}-\frac{\mu_i}{\ep^2}\right\}\\
+                                 & \leq & \#\left\{j\in\NN:\,\nu_j\leq
+                                 \frac{C}{\ep}-\frac{\mu_1}{\ep^2}\right\}\\
+                                 & \leq & \#\left\{j\in\NN:\,\nu_j\leq
+                                     \frac{\alpha}{\ep}
+                                 \right\}\approx \frac{1}{\ep},
+    \end{eqnarray*}
+    where the last estimate uses the fact that, from Weyl's formula, the number
+    of eigenvalues of $-|\Delta_{\mathring g}|$ counted with multiplicity which
+    are less than $\theta>0$ is equivalent to $\sqrt{\theta}$ as $\theta\to\infty$.
+
+\end{proof}

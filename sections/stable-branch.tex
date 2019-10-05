@@ -1,0 +1,64 @@
+% !TeX root = ../main.tex
+
+\subsection{The stable branch}
+\label{sec:stable-branch}
+
+Let $L(u):=-\Delta u - \lambda e ^ u$. We say that a solution $u$ of
+$(G_\lambda)$ is \textit{stable} if the linearized operator of $L$ at the point
+$u$ is positive definite. This notion of stability comes from the following
+argument: For $\Omega$ consider the functional $\EE:C_0^2(\Omega)\to\RR$
+defined by
+\begin{equation}
+    \EE(u):= \frac{1}{2}\int_\Omega |\nabla u|^2\, dx - \int_\Omega e^u\, dx.
+\end{equation}
+We say that $u$ is a critical point of $\EE$ if for every $\phi\in
+C_0^2(\Omega)$, $0$ is a critical point of $E:\RR\to \RR$ given by
+$E(t):=\EE(u+t\phi)$. Indeed, the equation $E'(0)=0$ gives
+\begin{equation}
+    \int_\Omega (-\Delta u-e^u)\,\phi \, dx = 0\; \mbox{ and }\;
+    E''(0)=\int_\Omega|\nabla u|^2 - \int_\Omega e^u\phi^2.
+\end{equation}
+
+It is hence natural to define stability as follows.
+
+\begin{definition} Let $\Omega$ be an open set of $\RR^n$, and $u\in
+    C_0^2(\Omega)$ a solution of $-\Delta u = f(u)$. We say that $u$ is stable
+    if
+    $$
+    Q_u(\phi):=\int_\Omega|\nabla \phi|^2\;dx - \int_\Omega f'(u)\,\phi^2\;dx
+    \geq 0
+    $$
+    for all $\phi\in C_c^1(\Omega)$ (or $\phi\in H_0^1(\Omega)$ if $\Omega$ is
+    bounded).
+\end{definition}
+
+For the sake of completeness, let us give some properties of stable solutions.
+
+\begin{proposition} Local minimisers of the energy $\EE$ are stable.
+\end{proposition}
+
+\begin{proposition} A $C_0^2(\Omega)$ solution of $-\Delta u = f(u)$ is stable
+    if and only if $\lambda_1(-\Delta u-f'(u),\omega)\geq 0$ for every bounded
+    subdomain $w$ of $\Omega$ (or simply, $\omega=\Omega$ if $\Omega$ is
+    bounded).
+\end{proposition}
+\begin{proposition} A $C_0^2(\Omega)$ solution of $-\Delta u = f(u)$ is stable
+    if and only if it exists $v\in C^2(\Omega)$, $v>0$, and $-\Delta v -f'(u)\,
+    v\geq 0.$
+\end{proposition}
+\begin{proposition} There is one unique stable solution of $(G_\lambda)$ for
+    every admissible $\lambda$, which is a minimiser of the energy and the
+    solution with the smallest $L^\infty(\Omega)$ norm.
+\end{proposition}
+
+For more properties and proofs we recomend \cite{stable-solutions-elliptic},
+$\S 1$. We define also the lower (or stable) branch of the curve
+$$\mathcal S:=\{(\lambda,||u_\lambda||_{L^\infty(\Omega)}),\, u_\lambda\mbox{ is a
+    solution of }(G_\lambda)\}.
+$$
+It turns out (see \cite{stable-solutions-elliptic}, \S 3.3), that for every $n$
+there exists a maximum value $\lambda_\ast$ such that $\mathcal{S}$
+is a smooth curve connecting $(0,0)$ with $(\lambda_\ast,
+||u_{\lambda_\ast}||_{L^\infty(\Omega)})$, which is unbounded in the $||\cdot
+||_{L^\infty}$ direction if $n\geq 10$.
+

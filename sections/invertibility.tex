@@ -1,0 +1,52 @@
+\subsection{Invertibility of $\tilde L_\ep$}
+
+One may apply the preceding analysis to conclude the following.
+
+\begin{theorem}
+Given $N\geq 3$, there exists a set $A^N\subset (0,+\infty)$ and $N_0\in \NN$
+such that, for all $\ep\in A^N$, the operator $\tilde L_\ep$ is invertible and
+the norm of its inverse defined from $C^0(T_\ep(\Lambda))$ to
+$C_0^1(T_\ep(\Lambda))$ (the subspace of $C^1(T_\ep(\Lambda))$ spanned by
+functions that vanish on $\partial T_\ep(\Lambda)$) is bounded by a constant
+times $\ep^{-1-N-N_0}$. Moreover, for $\alpha>N-1$, 
+$$
+\lim_{\ep\to 0}\frac{\ep -\operatorname{meas}(A^N\cap(0,\ep))}{\ep^\alpha} = 0.
+$$
+\end{theorem}
+
+\begin{proof}
+ Fix $\ep>0$, denote by $\Sigma_\ep$ the spectrum of $\tilde H_\ep = a\tilde
+ L_\ep$ and the set of ``resonant'' values of $\ep$ by
+ $$
+ R_\ep:=\{\ep>0:\, 0\in S_\ep\}
+ $$
+ {\color{red} Shouldnt it be $\Sigma$ instead of $S$?}
+
+ It is easy to show that if $\ep\neq R_\ep$, the norm of the inverse of $\tilde
+ H_\ep$ can be estimated by a constant times $1/\delta_\ep$ where
+ $\delta:=\min\{|\mu|:\, \mu\in S_\ep\}$ {\color{red} same} is the distance
+ from 0 to the spectrum.  Fix now $N\geq 2$ and define, for all $\ep\in(0,1)$,
+ the subset of ${}^c(R_\ep)$
+ \begin{equation}
+    A_\ep^N:=\{\alpha\in(\ep,2\ep):\, (\alpha-\ep^N,\alpha + \ep^N)\cap
+    R_\ep=\emptyset\},
+\end{equation}
+which consists of values that are far enough from the resonant ones. The fact
+that the Morse index of $\tilde L_\ep$ is bounded by $C/\ep$ implies that
+$\ep-\mbox{meas}(A_\ep^N)$ (the quantity of negative eigenvalues of $H_\ep$ up
+to a multiplicative constant) cannot belarger than a constant times
+$\ep^{N-1}$. The result of Lemma \ref{lem-partial-nu} also implies that the
+norm of the inverse of $\tilde H_\ep$ is bounded by a constant times
+$\ep^{-1-N}$ and, as $\tilde L_\ep = a\tilde H_\ep$ where $a$ is bounded away
+from 0, we have the same property for $L_\ep$. If we let
+\begin{equation}
+    A^N:=\bigcup_{\ep\in(0,1)} A_\ep^N,
+\end{equation}
+then for every $\ep\in A^n$, $\tilde L_\ep$ is invertible, when defined from
+$L^2(T_\ep)$ to itself, and the norm of its inverse is bounded by a constant
+times $\ep^{-1-N}$. The norm of the inverse of $\tilde{L}_\ep$ when defined
+from $C^0(T_\ep)$ into $C_0^1(T_\ep))$ follows from Schauder's estimates:
+indeed, up to some powers of $\ep$, say $N_0$, we have the same property. This
+completes the proof.
+\end{proof}
+

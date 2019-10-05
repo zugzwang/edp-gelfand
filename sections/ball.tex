@@ -1,0 +1,83 @@
+% !TeX root = ../main.tex
+
+\subsection{The case $\Omega=B^n$}
+\label{sec:ball}
+The celebrated theorem of Gidas-Ni-Nirenberg (see \cite{gidas-ni-nirenberg})
+establishes that the solutions of
+\begin{equation}
+    (\mbox{GNN})\;\left\{ 
+        \begin{array}{cc} \Delta u + f(u)=0 & \mbox{ in }B^n,\\
+        u=0 & \mbox{ on }\partial B^n,
+    \end{array}\right.
+\end{equation}
+are positive and radially symmetric provided that $f$ is positive and regular,
+where $B^n=\{x\in\RR^n,|x|\leq 1\}.$ Therefore, if $\Omega=B^n$, all solutions
+of $(G_\lambda)$ are radially symmetric and $(G_\lambda)$ is equivalent to the
+problem of finding $u:[0,1]\to\RR$ such that
+\begin{equation}
+    \left\{\begin{array}{lc} 
+            u''+\frac{n-1}{r}u'+\lambda\, e^u =0, & r\in (0,1),\\
+    u'(0) = u(1) = 0.&  \end{array}\right.
+\end{equation}
+Notice that $||u||_{L^\infty}=u(0)$. For $n=1$, the equation $u''+\lambda e^u=0$
+may be explicitely solved by means of the Laplace transform (see \cite{bratu}),
+giving $u(x)=2\,\log\big(\alpha\,\mbox{sech}(\alpha\sqrt{\lambda/2}\cdot
+x)\big)$, and the boundary conditions require that $\alpha$ is a solution to
+the transcendental equation $\alpha
+=\mbox{cosh}\big(\alpha\sqrt{\lambda/2}\big)$. One verifies that this leads to
+zero, one, or two solutions for $\lambda>\lambda_c,\lambda=\lambda_c$ and
+$\lambda<\lambda_c$ respectively, where $\lambda_c\approx .88$. Observe that
+$||u||_{L^\infty}=u(0)=2\,\log\alpha$, and from the transcendental equation one
+computes $\alpha_1=1+\frac{\lambda}{4}+o(1)$, $\alpha_2=\frac{4}{\lambda}+o(1)$.
+It thus follows that, for any small and fixed $\lambda$, one solution
+approaches to $||u||=0$ and the other one approaches to $||u||=\infty$, this is,
+the solution curve $(\lambda, ||u_\lambda||)$ is unbounded, contained in
+$[0,\lambda_c]\times \RR^+$. One can easily check that, in the upper branch of
+solutions, $\lambda$ decreases with $||u||$, yielding the nose-shape of the
+solution curve.
+
+Other branches of solutions have been computed by numerical means, see for
+instance \cite{new-solutions}.  The bi-dimensional case $\Omega=B^2$ can also
+be solved explicitly and it presents a similar behaviour than the previous one.
+Solutions exist if and only if $0\leq \lambda \leq 2$, and for $\lambda=2$
+there is only one solution given by $u_\ast(r)=\log\frac{4}{(1+r^2)^2}$.
+For other admissible values of $\lambda$, solutions are given by
+$$
+u_i(r)=\log\frac{b_i}{(1+(\lambda\, b_i/8)r^2)^2},
+$$
+where
+$b_i=\frac{32}{\lambda^2}\big(1-\frac{\lambda}{4}+(-1)^i\sqrt{1-\lambda/2}\big),
+i=1,2$.
+\medskip
+
+There is, however, a remarkable difference between $n=1$ and $n=2$: For
+$\Omega=(-1,1)$, the unstable solution blows up at every point as $\lambda\to
+0$, whereas for $\Omega=B^2$, it blows up only at the origin.
+\medskip
+
+For general dimension $n\geq 3$, the problem is analysed with a suitable change
+of variables, and the behaviour of the solution yields from a dynamical coupled
+system that arises from the study of the radial equation. This is the approach
+considered by Dupaigne in \cite{stable-solutions-elliptic}; for other
+instances of the Gelfand problem we strongly recommend this text. We summarize
+the results for the radially symmetric case in every dimension in Table \ref{table:bifurcation-ball}.
+
+\begin{table}[ht!]
+    \center
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|c|p{.4\textwidth}|c|}
+\hline
+\textit{Dimension}                 & \textit{Number of solutions}                                            & \textit{Maximum value of $\lambda$}                  \\ \hline
+\multirow{2}{*}{$n=1,2$}           & Two if $\lambda\in(0,\lambda_\ast)$                                     & \multirow{8}{*}{$\lambda_\ast(B^n)>2(n-2)$} \\ \cline{2-2}
+                                   & One if $\lambda=\lambda_\ast$                                           &                                             \\ \cline{1-2}
+\multirow{6}{*}{$3\leq n  \leq 9$} & One if $\lambda$ is sufficiently small                                  &                                             \\ \cline{2-2}
+                                   & Finitely many if $\lambda\neq 2(n-2)$                                   &                                             \\ \cline{2-2}
+                                   & More than any given number for $\lambda$ sufficiently close to $2(n-2)$ &                                             \\ \cline{2-2}
+                                   & Infinitely many for $\lambda = 2(n-2)$                                  &                                             \\ \cline{2-2}
+                                   & Two for $\lambda$ close to $\lambda_\ast(B^n)$                          &                                             \\ \cline{2-2}
+                                   & One for $\lambda = \lambda_\ast(B^n)$                                   &                                             \\ \hline
+$n\geq 10$                         & One unique stable solution                                              & $\lambda_\ast(B^n)=2(n-2)$                  \\ \hline
+\end{tabular}
+\caption{Bifurcation diagram for the Gelfand problem in $\Omega = B^n$ (\cite{stable-solutions-elliptic})}
+\label{table:bifurcation-ball}
+\end{table}

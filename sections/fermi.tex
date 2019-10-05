@@ -1,0 +1,42 @@
+% !TeX root = ../main.tex
+
+\subsection{Fermi coordinates}
+\label{sec:fermi}
+
+Our framework is a specific case of the one used in \cite{Pacard2014} for a
+1-dimensional manifold, and we will indeed follow their notations. Consider the
+tubular neighbourhood $T_\ep$ as defined in \ref{eq-tube}; The Fermi coordinates
+parameterise this set as a product space between the curve $\Lambda$ and
+$B^{n-1}$ as follows. First identify $\Lambda$ with the zero-section of
+$N\Lambda$ (the normal bundle of $\Lambda$) and $T_\ep$ with
+$$
+\Omega_\ep:=\{(y,z)\in N\Lambda;\, y\in\Omega,\, z\in N_y\Lambda,\, |z|\leq\ep\}
+$$
+via the natural mapping $T_\ep\to\Omega_\ep$, $(y,z)\mapsto y+z$.
+
+If $g_z:=dz^2$ is the Euclidean metric on normal fibers, and $\mathring{g}$ is
+the metric induced on $\Lambda$, we have that the metric $\bar g$ on $N\Lambda$
+is induced by the embedding of $\Lambda$ in $\RR^n$, this is $\bar g=\mathring
+g+g_z$. Lemma 3.2 of \cite{Pacard2014} proves that, in these coordinates, the
+Euclidean Laplacian $\Delta$ can be decomposed as
+\begin{equation}
+\Delta = \Delta_{\bar g} + D,
+\end{equation}
+where $\Delta_{\bar g}=\Delta_{\mathring g}+\Delta_{g_z}$ denotes the
+Laplace-Beltrami operator on $N\Lambda$ for metric $\bar g$, and $D$ is a
+second-order differential operator of the form
+\begin{equation}
+D = \sum_{i=1}^{n-1} z_iD_i^{(2)}+D^{(1)},
+\end{equation}
+where $D^{(1)}$ and $D^{(2)}$ are first-order and second-order partial
+differential operators respectively, whose
+coefficients are smooth and bounded.
+Note that in this $1$--dimensional manifold, we have a parameterisation
+$t:\RR\to\Lambda$ of the curve, and the Laplace-Beltrami operator of $\Lambda$
+is simply $\partial_{tt}$. We therefore have
+\begin{equation}
+    \Delta = \partial_{tt}+\Delta_{g_z}+D.
+\end{equation}
+This decomposition, and in particular the form of the operator $D$, will allow
+us to obtain estimates for functions defined in small tubes and prove our main
+results, which we describe in the next sections.

@@ -1,0 +1,97 @@
+\section{Unstable solutions in $\RR^2$ and $\RR^3$}
+
+In this section, we show that the preceding construction generalises to obtain
+new solutions to the Liouville problem in the tube given an unstable solution to
+the problem in the ball $B^{n-1}$. We know that, for $n\geq 11$, there is a
+unique solution to the Liouville problem in $B^{n-1}$, which is stable, thus we
+will not be led to new solutions. We therefore work in tubes embedded in
+$\RR^n$ with $n=2,3$.
+
+The key ingredient that allowed us to prove the existence of the stable solution
+in the tube is the invertibility of the operator $L_\ep=-(\Delta_{\mathring
+g}+\lambda e^{u_\ep})$, where we recall that $u_\ep$ is a copy of the solution
+given by the Gidas-Ni-Nirenberg theorem in the unit ball. Assume $2\leq n\leq 3$
+and $\Omega=B^{n-1}$. We know from section \ref{sec:ball} that, for every
+$\lambda < \lambda^\ast(B^{n-1})$, there is only one solution other than the
+stable one, which we note by $\tilde U$. In other words, $\tilde U$ solves
+\begin{equation}
+\label{eq:u-tilde}
+\left\{
+\begin{array}{cc}
+\Delta \tilde U + \lambda e^{\tilde U}=0 & \mbox{ in }B^{n-1},\\
+\tilde U = 0 &\mbox{ on }\partial B^{n-1}.
+\end{array}
+\right.
+\end{equation}
+
+It is known {\color{red} referencia...} that 
+$$
+\mu_1(-\Delta-\lambda^\ast e^{u_\ast},B^{n-1})=0,
+$$
+where $u_\ast$ is the solution to $(L_\lambda^\ast)$ in the ball and $\mu_1$
+stands for the least eigenvalue (see \cite{stable-solutions-elliptic}, \S 2),
+is the only case where the operator $-\Delta-\lambda^\ast e^{u_\ast}$ is
+non-invertible for these dimensions. In this case, let us note, for any
+$\lambda < \lambda^\ast$,
+$$\mu_1<0<\mu_2\leq \mu_3\leq \cdots$$
+the eigenvalues of the operator $-\Delta-\lambda e^{\tilde U}$ in the unit ball
+$B^{n-1}$, and define as before $\tilde u_\ep:T_\ep\to\RR$ by $\tilde
+u_\ep(y,z)=\tilde U\big(\frac{\operatorname{dist}(z,\Lambda)}{\ep}\big)$. The
+negative eigenvalue $\mu_1$ is the source of a resonance phenomenon, forcing
+to tweak part of the argument. Let us explain briefly: Note
+$$0=\nu_1<\nu_2\leq\nu_3\leq\dots $$
+the eigenvalues of $-\Delta_{\mathring g}$ on $\Lambda$. If we proceed as
+before, the argument fails when trying to invert $\tilde
+L_\ep:=-\ep^2\Delta+\lambda e^{\tilde u_\ep}$. Indeed, with a rescaling to work
+in $T_1( \Lambda )$, this operator becomes $(-\Delta_{g_z}-\ep^2
+\Delta_{\mathring g}-\ep D):=\hat L - \ep D$. Now, the eigenvalues of $\hat L$
+are of the form $\mu_i+\ep^2\nu_j$, and as $\mu<0$, there exist values of $\ep$
+such that $\hat L$ is non invertible. Let us note
+$$
+S:=\{\ep>0\,:\; \mu_1+\ep^2\nu_j=0,\, j\in \NN\}
+$$
+the set of such values of $\ep$. Even if we restrict $\ep\not\in S$, we will not
+conclude at once the invertibility of $\tilde L_\ep$, because the fixed-point
+theorem uses the fact that the norm of the inverse is controlled by
+$1/\delta_\ep$, where $\delta_\ep$ is the distance from $0$ to the spectrum,
+which was $\mu_1$ before. Here, we only have the bound
+$$
+\delta_\ep\leq\ep^2 \max_{1\leq j \leq k}(\nu_{j+1}-\nu_j),
+$$
+where $k$ is the index of the first eigenvalue of the spectrum
+$(\nu_j)_{j\in\NN}$ such that $\mu_1+\ep^2\nu_k>0$. In particular, we will not
+find a contraction mapping leading to the invertibility of $\tilde L_\ep$.
+
+Let us first prove a partial result, and concentrate in $\tilde L_\ep$ afterwards.
+
+\begin{theorem}
+    Let $n=2,3$. For small enough $\ep$ and such that $\tilde L_\ep$ is
+    invertible, there exist two solutions to
+    \begin{equation}
+        \label{eq-thm-2-sols}
+        \left\{
+            \begin{array}{cc}
+                \Delta u + \frac{\lambda}{\ep^2} e^u = 0 & \mbox{ in
+                }T_\ep(\Lambda),\\
+                    u=0 & \mbox{ on }\partial T_\ep(\Lambda).
+                \end{array}
+                \right.
+    \end{equation}
+    \end{theorem}
+    \textit{Proof: } Define by analogy the functions $\tilde W, \tilde w_\ep$
+    as supersolutions and prove the same estimates as before. The fact that
+    $\tilde L_\ep$ is invertible ensures that we have elliptic estimates for
+    $\tilde u_\ep, \tilde w_\ep$. To finish the construction, restate the
+    problem \ref{eq-thm-2-sols} as a fixed-point problem that can be easily
+    solved as in the proof of theorem \ref{thm:unique-stable-sol}, completing
+    the proof.\hfill $\blacksquare$
+
+    \input{sections/morse-index.tex}
+    \input{sections/exploiting-pacard}
+    \input{sections/invertibility}
+
+    We have therefore proven that, in dimensions 2 and 3, there exist two
+    solutions to the problem given that $\ep$ is away from the set of values
+    that lead to resonance phenomena: the stable one discussed in
+    \ref{sec:stable-sol-in-tube} and the unstable one, with Morse index
+    $\approx 1/\ep$.
